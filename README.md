@@ -106,8 +106,7 @@ Once your virtual environment has been activated, install Django 3 using pip:
 
 ### 7. At the beginning of class, download the resources
 When you have signed in to the class,
-the **Resources** widget will have PDFs for the slides and
-for a resource package that has PyCharm shortcuts, links, and a Python 2 to 3 comparison
+download the PDF files in the **Resources** widget.
 
 ## FAQs
 ### Can I use Python 2?
