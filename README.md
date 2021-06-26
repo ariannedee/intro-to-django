@@ -111,7 +111,7 @@ download the PDF files in the **Resources** widget.
 ## FAQs
 ### Can I use Python 2?
 
-No. Django 3, does not support Django 2.
+No. Django 3, does not support Python 2 or Python < 3.6.
 
 ### PyCharm can't find Python 3
 
