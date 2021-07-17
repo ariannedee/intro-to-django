@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block bodyclass %}has-background-light{% endblock %}
+{% block content %}
+
+<div class="box p-6">
+
+<h1 class="title">Log In</h1>
+<form class="login" method="POST" action="{% url 'login' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <div class="buttons">
+
+  <a class="button" href="{% url 'password_reset' %}">Forgot Password?</a>
+  <button class="button is-primary" type="submit">Log In</button>
+  </div>
+</form>
+</div>
+<div class="block ml-6">
+   No account?
+
+  <a class="is-secondary" href="{% url 'login' %}">Sign up</a>
+</div>
+
+{% endblock %}
