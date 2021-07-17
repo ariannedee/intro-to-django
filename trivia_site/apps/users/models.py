@@ -1,0 +1,28 @@
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+from django.db.models import CharField
+from django.urls import reverse
+
+
+class User(AbstractUser):
+    """
+    Create a custom User class.
+    - Not all users have a first and last name, so use a single name field
+    - Users should be able to log in with their email, so make it unique
+    """
+    name = CharField(max_length=255)
+    email = models.EmailField('Email address', unique=True)
+
+    def get_full_name(self):
+        return self.name
+
+    def get_short_name(self):
+        return self.name
+
+    def get_absolute_url(self):
+        """Get url for user's detail view.
+
+        Returns:
+            str: URL for user detail.
+        """
+        return reverse("users:detail", kwargs={"email": self.email})
