@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Django Trivia</title>
+  <title>Django Trivia - {% block title %}Home{% endblock %}</title>
 
   <!-- Add an icon to the browser tab -->
   <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
@@ -28,8 +28,8 @@
 <div class="container">
   {% if messages %}
   {% for message in messages %}
-  <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <div class="alert notification {% if message.tags %}is-{{ message.tags }}{% endif %}">{{ message }}
+    <button class="delete" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   </div>
   {% endfor %}
   {% endif %}

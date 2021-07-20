@@ -5,12 +5,14 @@ User = get_user_model()
 
 
 class UserChangeForm(auth_forms.UserChangeForm):
+    password = None
+
     class Meta(auth_forms.UserChangeForm.Meta):
         model = User
-        fields = ("email",)
+        fields = ("name", "email",)
 
 
 class UserCreationForm(auth_forms.UserCreationForm):
     class Meta(auth_forms.UserCreationForm.Meta):
         model = User
-        fields = ("username", "email",)
+        fields = ("username", "name", "email",)

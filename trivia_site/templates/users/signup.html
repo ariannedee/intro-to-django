@@ -1,0 +1,27 @@
+<!-- templates/registration/signup.html -->
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block bodyclass %}has-background-light{% endblock %}
+
+{% block content %}
+{% load bulma_tags %}
+
+<div class="box p-6">
+  <h1 class="title">Sign up</h1>
+  <form class="signup" method="POST" action="{% url 'users:signup' %}">
+    {% csrf_token %}
+    {{ form|bulma }}
+    <div class="buttons">
+      <button class="button is-primary" type="submit">Sign up</button>
+    </div>
+  </form>
+</div>
+<div class="block ml-6">
+  Have an account?
+  <a class="is-secondary" href="{% url 'users:signup' %}">Log in</a>
+</div>
+
+
+{% endblock %}
