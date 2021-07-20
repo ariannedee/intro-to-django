@@ -13,6 +13,9 @@ class User(AbstractUser):
     name = CharField(max_length=255)
     email = models.EmailField('Email address', unique=True)
 
+    USERNAME_FIELD = 'email'                # Log in with email (instead of username)
+    REQUIRED_FIELDS = ['name', 'username']  # Require these when creating a superuser
+
     def get_full_name(self):
         return self.name
 
