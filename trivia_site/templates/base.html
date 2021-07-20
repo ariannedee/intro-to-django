@@ -28,8 +28,13 @@
 <div class="container">
   {% if messages %}
   {% for message in messages %}
-  <div class="alert notification {% if message.tags %}is-{{ message.tags }}{% endif %}">{{ message }}
-    <button class="delete" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <div class="message {% if message.tags %}is-{{ message.tags }}{% endif %}">
+    <div class="message-header">
+      <button class="delete" aria-label="Close"></button>
+    </div>
+    <div class="message-body is-light">
+      {{ message }}
+    </div>
   </div>
   {% endfor %}
   {% endif %}

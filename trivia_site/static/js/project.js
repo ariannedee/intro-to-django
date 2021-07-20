@@ -7,7 +7,7 @@ $(document).ready(function() {
       $(".navbar-burger").toggleClass("is-active");
       $(".navbar-menu").toggleClass("is-active");
   });
-    $(".notificaton .delete").click(function(this) {
-      $(this).delete();
+    $(".message .delete").click(function(e) {
+      $(this).parent().parent().remove();
     });
 });
