@@ -17,9 +17,11 @@
       <a class="navbar-item">
         Home
       </a>
-      <a class="navbar-item" href="{% url 'admin:index' %}">
-        Admin
-      </a>
+      {% if request.user.is_staff %}
+        <a class="navbar-item" href="{% url 'admin:index' %}">
+          Admin
+        </a>
+      {% endif %}
     </div>
 
     <div class="navbar-end">
