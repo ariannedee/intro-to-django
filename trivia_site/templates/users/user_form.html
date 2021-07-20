@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block bodyclass %}has-background-light{% endblock %}
+
+{% block content %}
+{% load bulma_tags %}
+<div class="box p-6">
+
+<h2>Update profile</h2>
+  <p class="subtitle">{{ user.username }}</p>
+<form class="form-horizontal" method="post" action="{% url 'users:update' %}">
+  {% csrf_token %}
+  {{ form|bulma_horizontal }}
+  <div class="field">
+    <a class="button" href="{% url 'users:my-profile' %}">Cancel</a>
+    <button type="submit" class="button is-primary">Update</button>
+  </div>
+  <input type="hidden" name="next" value="{{ next }}"/>
+</form>
+</div>
+{% endblock %}

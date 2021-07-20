@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block bodyclass %}has-background-light{% endblock %}
+
+{% block content %}
+<div class="box p-6">
+  <h2>User profile</h2>
+
+  <div class="block ml-3">
+      <div class="field">
+          <label class="label">Username</label>
+        <div class="control">{{ object.username }}</div>
+      </div>
+      <div class="field">
+          <label class="label">Name</label>
+        <div class="control">{{ object.name }}</div>
+      </div>
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">{{ object.email }}</div>
+      </div>
+  </div>
+
+  {% if object == request.user %}
+  <div class="control">
+      <a class="button is-primary" href="{% url 'users:update' %}" role="button">Edit</a>
+  </div>
+  {% endif %}
+
+
+</div>
+{% endblock content %}
