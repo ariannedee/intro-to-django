@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse, reverse_lazy
 from django.views.generic import DetailView, RedirectView, UpdateView, CreateView
 
-from trivia_site.apps.users.forms import UserCreationForm, UserChangeForm
+from .forms import UserCreationForm, UserChangeForm
 
 User = get_user_model()
 
