@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}{{ object.name }}{% endblock %}
 {% block bodyclass %}has-background-light{% endblock %}
 
 {% block content %}
@@ -30,4 +31,4 @@
 
 
 </div>
-{% endblock content %}
+{% endblock %}

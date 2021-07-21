@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="navbar p-3 is-dark" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item is-size-4 has-text-weight-semibold" href="/">
+    <a class="navbar-item is-size-4 has-text-weight-semibold" href="{% url 'index' %}">
       Django Trivia
     </a>
 
@@ -14,7 +14,7 @@
 
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item">
+      <a class="navbar-item" href="{% url 'index' %}">
         Home
       </a>
       {% if request.user.is_staff %}

@@ -1,12 +1,11 @@
 {% extends "base.html" %}
+{% load bulma_tags %}
 
 {% block title %}Log in{% endblock %}
 
 {% block bodyclass %}has-background-light{% endblock %}
 
 {% block content %}
-{% load bulma_tags %}
-
 <div class="box p-6">
   <h1 class="title">Log In</h1>
   <form class="login" method="POST" action="{% url 'login' %}">

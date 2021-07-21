@@ -1,13 +1,12 @@
 {% extends "base.html" %}
+{% load bulma_tags %}
 
 {% block bodyclass %}has-background-light{% endblock %}
 
 {% block title %}{{ user.name }}{% endblock %}
 
 {% block content %}
-{% load bulma_tags %}
 <div class="box p-6">
-
 <h2>Test profile</h2>
   <p class="subtitle">{{ user.username }}</p>
 <form class="form-horizontal" method="post" action="{% url 'users:update' %}">
