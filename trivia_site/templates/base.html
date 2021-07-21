@@ -21,7 +21,7 @@
 {% block header %}
 {% include "partials/header.html" %}
 {% endblock %}
-<section class="section">
+<section class="section main">
   <div class="container">
     {% if messages %}
     {% for message in messages %}
@@ -38,11 +38,12 @@
 
     <div class="content">
       {% block content %}
-      {% endblock content %}
+      {% endblock %}
     </div>
   </div>
 </section>
 
+{% include "partials/footer.html" %}
 
 {% block modal %}{% endblock modal %}
 
