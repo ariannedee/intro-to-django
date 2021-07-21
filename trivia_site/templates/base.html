@@ -12,9 +12,6 @@
   <!-- Include Bulma for styling -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
-  <!-- Include Bootstrap for styling -->
-<!--  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"-->
-<!--        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
   <!-- Your custom CSS -->
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
@@ -25,26 +22,24 @@
 {% include "partials/header.html" %}
 {% endblock %}
 <section class="section">
-<div class="container">
-  {% if messages %}
-  {% for message in messages %}
-  <div class="message {% if message.tags %}is-{{ message.tags }}{% endif %}">
-    <div class="message-header">
-      <button class="delete" aria-label="Close"></button>
+  <div class="container">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="message {% if message.tags %}is-{{ message.tags }}{% endif %}">
+      <div class="message-header">
+        <button class="delete" aria-label="Close"></button>
+      </div>
+      <div class="message-body is-light">
+        {{ message }}
+      </div>
     </div>
-    <div class="message-body is-light">
-      {{ message }}
+    {% endfor %}
+    {% endif %}
+
+    <div class="content">
+      {% block content %}
+      {% endblock content %}
     </div>
-  </div>
-  {% endfor %}
-  {% endif %}
-
-  <div class="content">
-
-  {% block content %}
-
-  {% endblock content %}
-  </div>
   </div>
 </section>
 
@@ -57,9 +52,11 @@
 <!-- Bootstrap JS and its dependencies-->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
 <!-- Your stuff: Third-party javascript libraries go here -->
 {% block page_js %}
