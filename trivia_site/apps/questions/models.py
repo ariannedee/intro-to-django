@@ -2,19 +2,36 @@ from django.db import models
 
 
 class Question(models.Model):
+    class Difficulty(models.TextChoices):  # Like an Enum
+        EASY = "E"
+        MEDIUM = "M"
+        HARD = "H"
+
     text = models.CharField('question', max_length=255)
     details = models.TextField(blank=True)
-    image = models.ImageField(blank=False)
+    image = models.ImageField(blank=True)
+    difficulty = models.CharField(
+        max_length=1,                # Char fields require a max length
+        choices=Difficulty.choices,  # Creates a dropdown in forms
+        blank=True,                  # Not required. If empty, value is ''.
+    )
 
     def __str__(self):
         return f"Question: {self.text}"
 
     def __repr__(self):
-        return f"Question ({self.pk}): {self.text}"
+        string = f"Question ({self.pk}): {self.text}"
+        if self.difficulty:
+            string += f" - {self.get_difficulty_display()}"  # Display name for a choices field
+        return string
 
 
 class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="choices")
+    question = models.ForeignKey(  # Define a many-to-one relationship
+        Question,                  # There are many choices for every question
+        on_delete=models.CASCADE,  # If you delete a question, delete its choices
+        related_name="choices"     # Get choices via q.choices (default is q.choice_set)
+    )
     text = models.CharField(max_length=100)
     is_correct = models.BooleanField(default=False)
     details = models.TextField(blank=True)

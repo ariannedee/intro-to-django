@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('text', models.CharField(max_length=255, verbose_name='question')),
                 ('details', models.TextField(blank=True)),
-                ('image', models.ImageField(upload_to='')),
+                ('image', models.ImageField(upload_to='', blank=True)),
             ],
         ),
         migrations.CreateModel(
