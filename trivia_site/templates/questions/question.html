@@ -4,7 +4,14 @@
 
 {% block content %}
 <div class="box p-6 has-text-centered">
-  <h3 class="title">{{ question.text }}</h3>
+  <h3 class="title">
+    {{ question.text }}
+    {% if user.is_staff %}
+    <a class="icon has-text-info is-size-6" href="{% url 'questions:update' question.pk %}">
+        <i class="fas fa-pencil-alt"></i>
+    </a>
+    {% endif %}
+  </h3>
   <div class="block">
     {{ question.details }}
   </div>

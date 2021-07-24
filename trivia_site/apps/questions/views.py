@@ -1,5 +1,7 @@
 import random
 
+from django.contrib import messages
+from django.forms import inlineformset_factory
 from django.http import Http404, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import loader
@@ -22,16 +24,24 @@ def question_view(request, pk):
 
 def question_update(request, pk):
     q = get_object_or_404(Question, pk=pk)
+    ChoiceFormSet = inlineformset_factory(
+        Question, Choice, fields=('text', 'is_correct'), can_delete=False, extra=0
+    )
     if request.method == 'POST':
+        formset = ChoiceFormSet(request.POST, instance=q)
         form = QuestionForm(request.POST, instance=q)
-        if form.is_valid():
+        if formset.is_valid() and form.is_valid():
+            formset.save()
             form.save()
-            return redirect(q.get_absolute_url())
+            messages.add_message(request, messages.SUCCESS, "This question was updated")
+        return redirect(q.get_absolute_url())
     else:
+        formset = ChoiceFormSet(instance=q)
         form = QuestionForm(instance=q)
 
-    context = {"question": form.instance, 'form': form}
+    context = {"question": form.instance, 'form': form, 'formset': formset}
     return render(request, "questions/question_edit.html", context=context)
+
 
 def question_view_no_shortcuts(request, pk):
     # instead of get_object_or_404()

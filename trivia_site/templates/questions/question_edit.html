@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load bulma_tags %}
+
+{% block bodyclass %}has-background-light{% endblock %}
+
+{% block content %}
+<div class="box p-6">
+  <h3 class="title">Update question {{ question.pk }}</h3>
+  <form class="update" method="POST" action="{% url 'questions:update' question.pk %}">
+    {% csrf_token %}
+    {{ form|bulma }}
+    <h4>Choices</h4>
+    {{ formset|bulma }}
+    <div class="buttons">
+      <a class="button" href="{{ question.get_absolute_url }}">Cancel</a>
+      <button class="button is-primary" type="submit">Update</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
