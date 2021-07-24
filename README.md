@@ -33,10 +33,10 @@ so your computer doesn't know where to look for it when Python runs
 (for some inexplicable reason).
 
 ##### If you're just installing Python now
-Follow the instructions here: [Windows Python installer instructions](docs/WININSTALL.md)
+Follow the instructions here: [Windows Python installer instructions](docs/install/WININSTALL.md)
 
 ##### If you've already installed Python with the default settings
-Follow the instructions here: [Add Python to PATH variable in Windows](docs/WINSETPATH.md)
+Follow the instructions here: [Add Python to PATH variable in Windows](docs/install/WINSETPATH.md)
 
 ### 2. Make sure that Python is properly installed
 1. Open the *Command Prompt* application in Windows
@@ -50,7 +50,7 @@ Follow the instructions here: [Add Python to PATH variable in Windows](docs/WINS
    a Python version of 3.6 or higher
    (whichever version you just downloaded).
    If it doesn't, you have to follow instructions to
-   [add Python to your PATH variable](docs/WINSETPATH.md).
+   [add Python to your PATH variable](docs/install/WINSETPATH.md).
 
 **Note:**
 You can now type just the `python` or `python3` command
@@ -127,8 +127,16 @@ Once in Settings:
 1. If it's not there, click **gear icon** > **Add...**
 1. In the new window, select **System Interpreter** on the left, and then look for the Python version in the dropdown
 1. If it's not there, click the **...** button and navigate to your Python location
-    - To find where Python is located, [look in these directories](docs/PATH_LOCATIONS.md)
+    - To find where Python is located, [look in these directories](docs/install/PATH_LOCATIONS.md)
     - You may have to search the internet for where Python gets installed by default on your operating system
+
+### How do I set up my IDE to use Django?
+Here are some links to configure your Django project in the following IDEs
+- [PyCharm Professional](docs/config/PyCharm_Pro.md)
+  - My IDE of choice for working in Django
+- [PyCharm Community](docs/config/PyCharm_Com.md)
+
+- [VS Code](docs/config/VSCode.md)
 
 ### Do you offer private Python help?
 Not at the moment, as I am currently taking care of a new human.
