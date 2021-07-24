@@ -7,26 +7,32 @@
   <h3 class="title">{{ question.text }}</h3>
   {% for choice in question.choices.all %}
   <div class="buttons is-centered">
-    <span class="button {% if choice.is_correct %}is-success{% else %}is-danger{% endif %}"
-       {% if not choice.is_correct %}disabled{% endif %}>
+    <a class="button is-rounded is-unclickable {% if choice.is_correct %}is-success{% elif choice == selected_choice %}is-danger{% else %}is-dark is-outlined{% endif %}">
+      {% if choice.is_correct %}
       <span class="icon mr-2">
-        {% if choice.is_correct %}
         <i class="fas fa-check"></i>
-        {% else %}
-        <i class="fas fa-times"></i>
-        {% endif %}
       </span>
+      {% elif choice == selected_choice %}
+      <span class="icon mr-2">
+        <i class="fas fa-times"></i>
+      </span>
+      {% endif %}
       {{ choice.text }}
-      {% if choice.pk == selected_choice.pk %}
-    </span>
-    {% if choice.is_correct %}
-    <span class="has-text-success m-4" style="float:right;">Correct!</span>
-    {% else %}
-    <span class="has-text-danger mb-2 ml-2" style="float:right;">Incorrect</span>
-    {% endif %}
-    {% endif %}
+    </a>
   </div>
   {% endfor %}
-  <a class="button" href="{% url 'questions:question' %}">Next</a>
+
+  <span>
+    <!-- Hack to fix spacing. Makes Correct/Incorrect label centred -->
+    <a class="button is-pulled-left is-invisible" href="{% url 'questions:question' %}">Next</a>
+
+    {% if selected_choice.is_correct %}
+      <span class="has-text-success is-size-4 is-bold">Correct!</span>
+    {% else %}
+      <span class="has-text-danger is-size-4 is-bold">Incorrect</span>
+    {% endif %}
+
+    <a class="button is-link is-pulled-right" href="{% url 'questions:question' %}">Next</a>
+  </span>
 </div>
 {% endblock %}
