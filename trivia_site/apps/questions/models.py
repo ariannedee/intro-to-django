@@ -17,10 +17,6 @@ class Question(models.Model):
         blank=True,                  # Not required. If empty, value is ''.
     )
 
-    @property
-    def random_choices(self):
-        return self.choices.order_by('?')
-
     def get_absolute_url(self):
         return reverse("questions:question", kwargs={"pk": self.pk})
 
@@ -40,7 +36,7 @@ class Choice(models.Model):
         on_delete=models.CASCADE,  # If you delete a question, delete its choices
         related_name="choices"     # Get choices via q.choices (default is q.choice_set)
     )
-    text = models.CharField(max_length=100)
+    text = models.CharField('choice', max_length=100)
     is_correct = models.BooleanField(default=False)
     details = models.TextField(blank=True)
 

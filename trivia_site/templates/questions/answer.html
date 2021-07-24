@@ -7,18 +7,26 @@
   <h3 class="title">{{ question.text }}</h3>
   {% for choice in question.choices.all %}
   <div class="buttons is-centered">
-    <p class="button {% if choice.is_correct %}is-success{% else %}is-danger{% endif %}"
+    <span class="button {% if choice.is_correct %}is-success{% else %}is-danger{% endif %}"
        {% if not choice.is_correct %}disabled{% endif %}>
+      <span class="icon mr-2">
+        {% if choice.is_correct %}
+        <i class="fas fa-check"></i>
+        {% else %}
+        <i class="fas fa-times"></i>
+        {% endif %}
+      </span>
       {{ choice.text }}
-    </p>
-    {% if choice.pk == selected_choice.pk %}
+      {% if choice.pk == selected_choice.pk %}
+    </span>
     {% if choice.is_correct %}
-    <p class="button has-text-success">Correct!</p>
+    <span class="has-text-success m-4" style="float:right;">Correct!</span>
     {% else %}
-    <p class="button has-text-danger">Incorrect</p>
+    <span class="has-text-danger mb-2 ml-2" style="float:right;">Incorrect</span>
     {% endif %}
     {% endif %}
   </div>
   {% endfor %}
+  <a class="button" href="{% url 'questions:question' %}">Next</a>
 </div>
 {% endblock %}

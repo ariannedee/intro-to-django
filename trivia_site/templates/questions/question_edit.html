@@ -5,12 +5,16 @@
 
 {% block content %}
 <div class="box p-6">
-  <h3 class="title">Update question {{ question.pk }}</h3>
+  <h2 class="title">Update question {{ question.pk }}</h2>
   <form class="update" method="POST" action="{% url 'questions:update' question.pk %}">
     {% csrf_token %}
-    {{ form|bulma }}
-    <h4>Choices</h4>
-    {{ formset|bulma }}
+    <div class="block p-5">
+      {{ form|bulma }}
+    </div>
+    <h3>Choices</h3>
+    <div class="block p-5">
+      {{ formset|bulma }}
+    </div>
     <div class="buttons">
       <a class="button" href="{{ question.get_absolute_url }}">Cancel</a>
       <button class="button is-primary" type="submit">Update</button>

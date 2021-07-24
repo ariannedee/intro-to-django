@@ -15,7 +15,7 @@
   <div class="block">
     {{ question.details }}
   </div>
-  {% for choice in question.random_choices %}
+  {% for choice in question.choices.all %}
   <div class="buttons is-centered">
     <a class="button is-dark is-outlined" href="{% url 'questions:answer' question.pk choice.pk %}">
       {{ choice.text }}
