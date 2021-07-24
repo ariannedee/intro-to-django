@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Question(models.Model):
@@ -15,6 +16,13 @@ class Question(models.Model):
         choices=Difficulty.choices,  # Creates a dropdown in forms
         blank=True,                  # Not required. If empty, value is ''.
     )
+
+    @property
+    def random_choices(self):
+        return self.choices.order_by('?')
+
+    def get_absolute_url(self):
+        return reverse("questions:question", kwargs={"pk": self.pk})
 
     def __str__(self):
         return f"Question: {self.text}"

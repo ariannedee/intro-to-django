@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block bodyclass %}has-background-light{% endblock %}
+
+{% block content %}
+<div class="box p-6 has-text-centered">
+  <h3 class="title">{{ question.text }}</h3>
+  <div class="block">
+    {{ question.details }}
+  </div>
+  {% for choice in question.random_choices %}
+  <div class="buttons is-centered">
+    <a class="button is-dark is-outlined" href="{% url 'questions:answer' question.pk choice.pk %}">
+      {{ choice.text }}
+    </a>
+  </div>
+  {% empty %}
+  <div class="block">
+    No choices configured
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

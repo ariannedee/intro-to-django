@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block bodyclass %}has-background-light{% endblock %}
+
+{% block content %}
+<div class="box p-6 has-text-centered">
+  <h3 class="title">{{ question.text }}</h3>
+  {% for choice in question.choices.all %}
+  <div class="buttons is-centered">
+    <p class="button {% if choice.is_correct %}is-success{% else %}is-danger{% endif %}"
+       {% if not choice.is_correct %}disabled{% endif %}>
+      {{ choice.text }}
+    </p>
+    {% if choice.pk == selected_choice.pk %}
+    {% if choice.is_correct %}
+    <p class="button has-text-success">Correct!</p>
+    {% else %}
+    <p class="button has-text-danger">Incorrect</p>
+    {% endif %}
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
