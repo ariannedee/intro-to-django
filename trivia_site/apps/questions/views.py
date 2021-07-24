@@ -31,6 +31,9 @@ def random_question(request):
 
 def question_update(request, pk):
     q = get_object_or_404(Question, pk=pk)
+
+    # Create a "formset" to update the choices related to a question
+    # https://docs.djangoproject.com/en/3.2/topics/forms/modelforms/#inline-formsets
     ChoiceFormSet = inlineformset_factory(
         Question, Choice, fields=('text', 'is_correct'), can_delete=False, extra=0, min_num=3
     )
