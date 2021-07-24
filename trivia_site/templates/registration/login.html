@@ -15,6 +15,7 @@
 
       <a class="button" href="{% url 'password_reset' %}">Forgot Password?</a>
       <button class="button is-primary" type="submit">Log In</button>
+      <input type="hidden" name="next" value="{{ next }}"/>
     </div>
   </form>
 </div>
