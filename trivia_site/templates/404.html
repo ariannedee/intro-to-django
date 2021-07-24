@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Django Trivia{% endblock %}
+
+{% block content %}
+<div class="block has-text-centered">
+  <h1 class="title">404 Error</h1>
+  <h2 class="subtitle has-text-grey">Object not found</h2>
+  <a class="button is-dark is-outlined" href="{% url 'index' %}">Go back home</a>
+</div>
+{% endblock %}
