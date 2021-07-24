@@ -9,21 +9,12 @@
   <h2>User profile</h2>
 
   <div class="block ml-3">
-      <div class="field">
-          <label class="label">Username</label>
-        <div class="control">{{ object.username }}</div>
-      </div>
-      <div class="field">
-          <label class="label">Name</label>
-        <div class="control">{{ object.name }}</div>
-      </div>
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control">{{ object.email }}</div>
-      </div>
+    {% include "users/partials/user_field.html" with label="Username" value=object.username %}
+    {% include "users/partials/user_field.html" with label="Name" value=object.name %}
+    {% include "users/partials/user_field.html" with label="Email" value=object.email %}
   </div>
 
-  {% if object == request.user %}
+  {% if object == user %}
   <div class="control">
       <a class="button is-primary" href="{% url 'users:update' %}" role="button">Edit</a>
   </div>
