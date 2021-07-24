@@ -32,7 +32,7 @@ def random_question(request):
 def question_update(request, pk):
     q = get_object_or_404(Question, pk=pk)
     ChoiceFormSet = inlineformset_factory(
-        Question, Choice, fields=('text', 'is_correct'), can_delete=False, extra=0
+        Question, Choice, fields=('text', 'is_correct'), can_delete=False, extra=0, min_num=3
     )
     if request.method == 'POST':
         formset = ChoiceFormSet(request.POST, instance=q)
