@@ -2,6 +2,7 @@
 - [Linking your virtual environment](#linking-your-virtual-environment)
 - [Running the `manage.py` development server](#running-the-managepy-development-server)
 - [Run Django in the Python Console](#run-django-in-the-python-console)
+- [Debugging](#debugging)
 
 ## Linking your virtual environment
 Follow the instructions here: [PyCharm virtual environment setup](PyCharm_venv.md)
@@ -59,3 +60,11 @@ django.setup()
 7. Rerun the Python Console. Your model imports should work!
 
 ## Debugging
+Follow the instructions for [configuring runserver in the run settings](#running-the-managepy-development-server).
+
+Once you've done that, you can run it in **Debug** mode.
+
+Breakpoints can be set in:
+- your Python code
+- any external library code (like Django internals)
+- template tags in your templates
