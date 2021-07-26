@@ -42,7 +42,7 @@ Also edit the name at the top, to "Runserver", so it's more descriptive
 
 5. Go to **Build, Execution, Deployment** > **Console** > **Python Console**
 
-<img width="30%" src="../img/com_console_2.png">
+<img width="20%" src="../img/com_console_2.png">
 
 6. Configure the console to run Django
   - Set the `DJANGO_SETTINGS_MODULE` **environment variable** to your project `settings.py` file's dotted path
