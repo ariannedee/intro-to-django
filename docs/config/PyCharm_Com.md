@@ -42,11 +42,11 @@ Also edit the name at the top, to "Runserver", so it's more descriptive
 
 5. Go to **Build, Execution, Deployment** > **Console** > **Python Console**
 
-<img width="60%" src="../img/com_console_2.png">
+<img width="30%" src="../img/com_console_2.png">
 
 6. Configure the console to run Django
-  - Set the `DJANGO_SETTINGS_MODULE` **environment variable** to point to your project `settings.py` file
-  - Set the **Python interpreter** to your virtual environment Python (if it's not already set properly)
+  - Set the `DJANGO_SETTINGS_MODULE` **environment variable** to your project `settings.py` file's dotted path
+  - Set the **Python interpreter** to your virtual environment's Python executable (if it's not already set properly)
   - Set the **working directory** to the folder that your `manage.py` file is in
   - In the **Starting script** area, add to the bottom of the existing code:
   ```python
