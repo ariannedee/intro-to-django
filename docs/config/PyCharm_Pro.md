@@ -18,7 +18,7 @@ Follow the instructions here: [PyCharm virtual environment setup](PyCharm_venv.m
 
 3. Name it and add any further configurations you want (defaults will work)
 
-<img width="40%" src="../img/pro_runserver_2.png">
+<img width="60%" src="../img/pro_runserver_2.png">
 
 4. Now you can run the server from the top nav bar
 
