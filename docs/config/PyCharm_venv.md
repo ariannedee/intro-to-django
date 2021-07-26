@@ -2,20 +2,20 @@
 
 ## 1. Open your settings/preferences
 
-   <img width="60%" src="../img/open_settings.png">
+   <img width="60%" src="../img/pycharm_venv_1.png">
    
 ## 2. Navigate to the Project Interpreter
 
-   <img width="60%" src="../img/project_interpreter.png">
+   <img width="60%" src="../img/pycharm_venv_2.png">
    
 ## 3. Add a new interpreter
 
-   <img width="60%" src="../img/add_new_interpreter.png">
+   <img width="60%" src="../img/pycharm_venv_3.png">
 
 ## 4. Select your existing virtual environment
 
-   <img width="60%" src="../img/select_venv.png">
+   <img width="60%" src="../img/pycharm_venv_4.png">
 
 ## 5. Or create a new virtual environment
 
-   <img width="60%" src="../img/new_venv.png">
+   <img width="60%" src="../img/pycharm_venv_5.png">
