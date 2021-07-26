@@ -1,11 +1,36 @@
 # Setting up Django in PyCharm Pro
 - [Linking your virtual environment](#linking-your-virtual-environment)
+- [Configure Django's project structure](#configure-djangos-project-structure)
 - [Running the `manage.py` development server](#running-the-managepy-development-server)
 - [Run Django in the Python Console](#run-django-in-the-python-console)
 - [Debugging](#debugging)
 
 ## Linking your virtual environment
 Follow the instructions here: [PyCharm virtual environment setup](PyCharm_venv.md)
+
+## Configure Django's project structure
+
+1. Open PyCharm's settings
+   
+<img width="60%" src="../img/pycharm_venv_1.png">
+
+2. Navigate to **Languages & Frameworks** > **Django**
+
+<img width="30%" src="../img/pro_django_1.png">
+
+3. Enable Django support and configure settings
+- Select the **Django project root**, the folder that `manage.py` is in
+- Select the **settings** file
+- Select the **manage script**
+
+<img width="60%" src="../img/pro_django_2.png">
+
+4. Configure project folders
+- Mark the `templates` folder as a **Template folder** (right click on folder > Mark Directory as)
+- Mark `venv`, `media`, `.vscode`, and `.idea` as **Excluded**, so those files don't get searched as part of your "project"
+- Mark `trivia_site` as **Sources Root** (not needed if your workspace root is the same as your project root folder)
+
+<img width="60%" src="../img/pro_django_3.png">
 
 ## Running the `manage.py` development server
 1. Open the run configuration view
