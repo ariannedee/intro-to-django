@@ -16,6 +16,7 @@ class Question(models.Model):
         choices=Difficulty.choices,  # Creates a dropdown in forms
         blank=True,                  # Not required. If empty, value is ''.
     )
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def get_absolute_url(self):
         return reverse("questions:question", kwargs={"pk": self.pk})
@@ -28,6 +29,11 @@ class Question(models.Model):
         if self.difficulty:
             string += f" - {self.get_difficulty_display()}"  # Display name for a choices field
         return string
+
+    class Meta:
+        ordering = ("pk",)                      # This is the default but can be overridden
+        verbose_name = "Question"               # This is the default but can be overridden
+        verbose_name_plural = "Quiz Questions"  # Shows up in admin navigation
 
 
 class Choice(models.Model):
