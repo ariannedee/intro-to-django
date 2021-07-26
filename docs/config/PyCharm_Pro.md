@@ -8,7 +8,7 @@ Follow the instructions here: [PyCharm virtual environment setup](PyCharm_venv.m
 
 ## Running the `manage.py` development server
 
-## Configuring Django in the Python Console
+## Run Django in the Python Console
 
 ## Debugging
 
