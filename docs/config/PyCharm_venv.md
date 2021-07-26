@@ -1,4 +1,4 @@
-# Configuring Python for PyCharm (Community and Pro)
+# Configuring your Python virtual environment PyCharm (Community and Pro)
 
 ## 1. Open your settings/preferences
 
