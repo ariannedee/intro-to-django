@@ -1,0 +1,68 @@
+[
+  {
+    "model": "questions.question",
+    "pk": 1,
+    "fields": {
+      "text": "What does ORM stand for?",
+      "created_at": "2021-07-27T7:41:00+07:00"
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 1,
+    "fields": {
+      "question": "1",
+      "text": "Objective Rational Mapper"
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 2,
+    "fields": {
+      "question": 1,
+      "text": "Object Relationship Model"
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 3,
+    "fields": {
+      "question": 1,
+      "text": "Object Relational Mapping",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "questions.question",
+    "pk": 2,
+    "fields": {
+      "text": "What happens when a url.py file is edited while the development server is still running?",
+      "created_at": "2021-07-27T7:42:00+06:00"
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 4,
+    "fields": {
+      "question": 2,
+      "text": "The web page is automatically reloaded"
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 5,
+    "fields": {
+      "question": 2,
+      "text": "The development server automatically restarts",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 6,
+    "fields": {
+      "question": 2,
+      "text": "The development server does nothing"
+    }
+  }
+]

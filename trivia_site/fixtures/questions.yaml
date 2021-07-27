@@ -1,8 +1,0 @@
-- model: questions.question
-  pk: 1
-  fields:
-    text: What does ORM stand for?
-- model: questions.question
-  pk: 2
-  fields:
-    text:
