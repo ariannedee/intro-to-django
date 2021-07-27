@@ -44,7 +44,7 @@ def question_update(request, pk):
             formset.save()
             form.save()
             messages.add_message(request, messages.SUCCESS, "This question was updated")
-        return redirect(q.get_absolute_url())
+            return redirect(q.get_absolute_url())
     else:
         formset = ChoiceFormSet(instance=q)
         form = QuestionForm(instance=q)
