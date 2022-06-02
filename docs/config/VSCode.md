@@ -8,7 +8,7 @@
 
 Make sure you have the Python extension by Microsoft.
 
-   <img width="60%" src="../img/vscode_extension.png">
+   <img width="50%" src="../img/vscode_extension.png">
 
 ## Linking your virtual environment
 
@@ -26,11 +26,11 @@ On Windows, this will be `.\venv\Scripts\python.exe`
 
 ### 1. Go to the **Run and Debug** view
 
-   <img width="60%" src="../img/vscode_django_1.png">
+   <img width="10%" src="../img/vscode_django_1.png">
 
 ### 2. Create a `launch.json` file
 
-   <img width="60%" src="../img/vscode_django_2.png">
+   <img width="40%" src="../img/vscode_django_2.png">
 
 ### 3. Select Django
 
