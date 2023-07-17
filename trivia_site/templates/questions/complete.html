@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block bodyclass %}has-background-light{% endblock %}
+
+{% block content %}
+<div class="box p-6 has-text-centered">
+  <h2>Quiz complete</h2>
+  <h3 class="title">
+    You got {{ correct }} / {{ total }}
+  </h3>
+  <div class="block">
+      <a class="button is-primary is-size-4" href="{% url 'questions:new' %}">Try again?</a>
+  </div>
+</div>
+{% endblock %}

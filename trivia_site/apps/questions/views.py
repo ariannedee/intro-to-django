@@ -1,5 +1,3 @@
-import random
-
 from django.contrib import messages
 from django.forms import inlineformset_factory
 from django.http import Http404, HttpResponse
@@ -20,13 +18,39 @@ def answer_view(request, question_pk, choice_pk):
     q = get_object_or_404(Question, pk=question_pk)
     c = get_object_or_404(Choice, question=q, pk=choice_pk)
     context = {"question": q, "selected_choice": c}
+
+    # Update current state
+    request.session['last_question_pk'] = q.pk
+    if c.is_correct:
+        request.session['correct'] += 1
+
     return render(request, "questions/answer.html", context=context)
 
 
-def random_question(request):
-    question_ids = [q.pk for q in Question.objects.all()]
-    pk = random.choice(question_ids)
-    return redirect('questions:question', pk=pk)
+def next_question(request):
+    last_pk = request.session.get('last_question_pk', 0)
+
+    question = Question.objects.filter(pk__gt=last_pk).first()
+    if question:
+        return redirect('questions:question', pk=question.pk)
+    else:
+        return redirect('questions:complete')
+
+
+def new_game(request):
+    request.session['last_question_pk'] = 0
+    request.session['correct'] = 0
+    request.session['total'] = Question.objects.count()
+
+    return redirect('questions:question')
+
+
+def complete(request):
+    context = {
+        "correct": request.session.get('correct', 0),
+        "total": request.session.get('total', 0)
+    }
+    return render(request, "questions/complete.html", context=context)
 
 
 def question_update(request, pk):
