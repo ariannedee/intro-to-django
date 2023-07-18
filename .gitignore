@@ -15,3 +15,8 @@ __pycache__
 .vscode/
 
 dj_test/
+
+# Trivia site
+local_settings.py
+.env
+staticfiles/
