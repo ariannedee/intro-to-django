@@ -17,6 +17,5 @@ __pycache__
 dj_test/
 
 # Trivia site
-local_settings.py
 .env
 staticfiles/
