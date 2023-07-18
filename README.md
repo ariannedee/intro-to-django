@@ -3,7 +3,7 @@ This is the code for the *O'Reilly Video* - **Intro to Django** presented by Ari
 
 ## Course setup
 
-1. [Install Python 3.11](#1-install-python-38-or-higher)
+1. [Install Python 3.11](#1-install-python-311)
 1. [Check that Python was installed properly](#2-make-sure-that-python-is-properly-installed)
 1. [Choose an IDE](#3-choose-an-ide)
 1. [Download the code](#4-download-the-course-files)
@@ -15,9 +15,13 @@ Please complete these steps prior to the course.
 Email 
 [arianne.dee.studios@gmail.com](mailto:arianne.dee.studios@gmail.com)
 if you have any questions.
-### 1. Install Python 3.8 or higher
+### 1. Install Python 3.11
 
 This course uses Python 3.11, but Python 3.8 and higher should work.
+
+The course uses Django 4.2,
+so check which Python versions are compatible with 
+Django 4.2 [here](https://docs.djangoproject.com/en/4.2/faq/install/#faq-python-version-support).
 
 #### To install the latest version of Python:
 1. Go to https://www.python.org/downloads/
