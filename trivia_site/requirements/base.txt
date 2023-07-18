@@ -1,2 +1,3 @@
 django-bulma>=0.8,<0.9
 environs==9.5.0
+whitenoise==6.5.0
