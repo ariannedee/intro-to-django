@@ -1,24 +1,23 @@
 # Intro to Django Live Training
-This is the code for the *O'Reilly Live Training* - **Intro to Django** presented by Arianne Dee
+This is the code for the *O'Reilly Video* - **Intro to Django** presented by Arianne Dee
 
-**Note**: If you're looking for the project code for a specific date in the past,
-look for the specific class [here](https://github.com/ariannedee/intro-to-django/releases)
+## Course setup
 
-Before the class, please follow these instructions:
-1. [Install Python](#1-install-python-36-or-higher)
+1. [Install Python 3.8](#1-install-python-38-or-higher)
 1. [Check that Python was installed properly](#2-make-sure-that-python-is-properly-installed)
 1. [Choose an IDE](#3-choose-an-ide)
 1. [Download the code](#4-download-the-course-files)
 1. [Create a virtual environment](#5-create-a-virtual-environment)
 1. [Install Django](#6-install-django)
-1. [Download the resources](#7-at-the-beginning-of-class-download-the-resources)
 
 ## Set up instructions
 Please complete these steps prior to the course.
 Email 
 [arianne.dee.studios@gmail.com](mailto:arianne.dee.studios@gmail.com)
 if you have any questions.
-### 1. Install Python 3.6 or higher
+### 1. Install Python 3.8 or higher
+
+This course uses Python 3.11, but Python 3.8 and higher should work.
 
 #### To install the latest version of Python:
 1. Go to https://www.python.org/downloads/
@@ -39,25 +38,20 @@ Follow the instructions here: [Windows Python installer instructions](docs/insta
 Follow the instructions here: [Add Python to PATH variable in Windows](docs/install/WINSETPATH.md)
 
 ### 2. Make sure that Python is properly installed
-1. Open the *Command Prompt* application in Windows
+1. Open the *PowerShell* application in Windows
    or *Terminal* on Mac or Linux
 
 1. Type `python --version` and press enter
 
 1. Type `python3 --version` and press enter
+1. 
+2. Type `py --version` and press enter
 
-1. One or both of those commands should print
-   a Python version of 3.6 or higher
-   (whichever version you just downloaded).
+1. At least one of those commands should print
+   a Python version of 3.8 or higher
+   (whichever version you just installed).
    If it doesn't, you have to follow instructions to
    [add Python to your PATH variable](docs/install/WINSETPATH.md).
-
-**Note:**
-You can now type just the `python` or `python3` command
-in *Command Prompt* or *Terminal*
-to run the Python interpreter.
-You can also run a *.py* file by running
-`python filename.py`
 
 ### 3. Choose an IDE
 **PyCharm** or **VS Code** are recommended.
@@ -65,11 +59,9 @@ You can also run a *.py* file by running
 For Django development, I recommend using **PyCharm Professional Edition** (paid).
 There is a 30-day free trial if you would like to try it out.
 
-In the course I'll be using the free **PyCharm Community Edition**
-but will demo a couple of useful features in the professional edition.
+In the video I use the free **PyCharm Community Edition**, which is sufficient.
 
-
-Download here either version here: https://www.jetbrains.com/pycharm/download/
+Download either version here: https://www.jetbrains.com/pycharm/download/
 
 Install, open, and use the default settings.
 
@@ -92,7 +84,6 @@ Clone the repository.
 3. Activate your virtual environment
    - **Mac/Linux**: `source django_venv/bin/activate`
    - **PowerShell**: `venv\Scripts\Activate.ps1`
-   - **CommandPrompt**: `venv\Scripts\activate.bat`
 
 If you are new to virtual environments, please watch this 
 [video lesson](https://learning.oreilly.com/videos/next-level-python/9780136904083/9780136904083-NLP1_01_03_03/)
@@ -102,11 +93,7 @@ Once your virtual environment has been activated, install Django 3 using pip:
 - `pip install django` to install the latest version of Django
   
 **OR**
-- `pip install "django>=3.0,<4"` to install the latest Django 3 version (once version 4 is released)
-
-### 7. At the beginning of class, download the resources
-When you have signed in to the class,
-download the PDF files in the **Resources** widget.
+- `pip install "django>=4.2,<5"` to install the latest Django 4.2 version (once version 5+ is released)
 
 ## FAQs
 ### Can I use Python 2?
@@ -138,9 +125,24 @@ Here are some links to configure your Django project in the following IDEs
 
 - [VS Code](docs/config/VSCode.md)
 
-### Do you offer private Python help?
-Not at the moment, as I am currently taking care of a new human.
+---
 
-If you might be interested in some private training for the future, email 
+## Django Trivia local setup instructions
+
+1. Navigate into the `trivia_site` folder
+2. Create a virtual environment with Python 3.8+
+3. Activate your virtual environment
+4. `$ pip install -r requirements/local.txt` to install local requirements
+5. `$ python manage.py migrate` to migrate your database
+6. `$ python manage.py createsuperuser` and follow instructions
+7. `$ python manage.py loaddata questions` to add seed data
+8. `$ python manage.py runserver` to run the development server
+
+---
+
+
+### Questions or comments?
+
+Email me at  
 [**arianne.dee.studios@gmail.com**](mailto:arianne.dee.studios@gmail.com) 
-so that I can inform you when I start taking on new clients.
+or submit an issue or pull request to this repository.
