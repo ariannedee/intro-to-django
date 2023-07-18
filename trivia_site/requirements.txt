@@ -1,4 +1,0 @@
-django>=4.2,<5.0
-django-bulma>=0.8,<0.9
-Pillow==2.2.2
-environs==9.5.0
