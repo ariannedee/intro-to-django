@@ -1,9 +1,9 @@
-# Intro to Django Live Training
+# Intro to Django
 This is the code for the *O'Reilly Video* - **Intro to Django** presented by Arianne Dee
 
 ## Course setup
 
-1. [Install Python 3.8](#1-install-python-38-or-higher)
+1. [Install Python 3.11](#1-install-python-38-or-higher)
 1. [Check that Python was installed properly](#2-make-sure-that-python-is-properly-installed)
 1. [Choose an IDE](#3-choose-an-ide)
 1. [Download the code](#4-download-the-course-files)
@@ -42,16 +42,14 @@ Follow the instructions here: [Add Python to PATH variable in Windows](docs/inst
    or *Terminal* on Mac or Linux
 
 1. Type `python --version` and press enter
+2. Type `python3 --version` and press enter
+3. Type `py --version` and press enter
 
-1. Type `python3 --version` and press enter
-1. 
-2. Type `py --version` and press enter
-
-1. At least one of those commands should print
-   a Python version of 3.8 or higher
-   (whichever version you just installed).
-   If it doesn't, you have to follow instructions to
-   [add Python to your PATH variable](docs/install/WINSETPATH.md).
+At least one of those commands should print
+a Python version of 3.8 or higher
+(whichever version you just installed).
+If it doesn't, you have to follow instructions to
+[add Python to your PATH variable](docs/install/WINSETPATH.md).
 
 ### 3. Choose an IDE
 **PyCharm** or **VS Code** are recommended.
@@ -66,8 +64,6 @@ Download either version here: https://www.jetbrains.com/pycharm/download/
 Install, open, and use the default settings.
 
 ### 4. Download the course files
-If you're viewing this on GitHub already, stay on this page.
-Otherwise, go to the GitHub repository: https://github.com/ariannedee/intro-to-django
 
 #### If you know git:
 Clone the repository.
@@ -83,7 +79,7 @@ Clone the repository.
 `python -m venv django_venv` or `python3 -m venv django_venv`
 3. Activate your virtual environment
    - **Mac/Linux**: `source django_venv/bin/activate`
-   - **PowerShell**: `venv\Scripts\Activate.ps1`
+   - **PowerShell**: `django_venv\Scripts\Activate.ps1`
 
 If you are new to virtual environments, please watch this 
 [video lesson](https://learning.oreilly.com/videos/next-level-python/9780136904083/9780136904083-NLP1_01_03_03/)
@@ -141,7 +137,7 @@ Here are some links to configure your Django project in the following IDEs
 ---
 
 
-### Questions or comments?
+## Questions or comments?
 
 Email me at  
 [**arianne.dee.studios@gmail.com**](mailto:arianne.dee.studios@gmail.com) 
