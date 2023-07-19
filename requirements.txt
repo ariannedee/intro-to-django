@@ -1,0 +1,7 @@
+django>=4.2,<5.0        # https://github.com/django/django
+
+# Used in the trivia site
+
+django-bulma>=0.8,<0.9  # https://github.com/timonweb/django-bulma
+environs==9.5.0         # https://github.com/sloria/environs
+whitenoise==6.5.0       # https://github.com/evansd/whitenoise

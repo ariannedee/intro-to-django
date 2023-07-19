@@ -10,7 +10,6 @@ class Question(models.Model):
 
     text = models.CharField('question', max_length=255)
     details = models.TextField(blank=True)
-    image = models.ImageField(blank=True)
     difficulty = models.CharField(
         max_length=1,                # Char fields require a max length
         choices=Difficulty.choices,  # Creates a dropdown in forms

@@ -1,4 +1,0 @@
--r base.txt
-
-django>=4.2,<5.0
-Pillow==10.0.0
