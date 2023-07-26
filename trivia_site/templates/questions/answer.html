@@ -6,7 +6,7 @@
 <div class="box p-6 has-text-centered">
   <h3 class="title">{{ question.text }}</h3>
   {% for choice in question.choices.all %}
-  <div class="buttons is-centered">
+  <div class="block is-centered">
     <a class="button is-rounded is-unclickable {% if choice.is_correct %}is-success{% elif choice == selected_choice %}is-danger{% else %}is-dark is-outlined{% endif %}">
       {% if choice.is_correct %}
       <span class="icon mr-2">
@@ -18,7 +18,18 @@
       </span>
       {% endif %}
       {{ choice.text }}
+  </span>
     </a>
+    {% if choice == selected_choice %}
+    <span class="absolute button is-inverted is-unclickable {% if choice.is_correct %}is-success{% else %}is-danger{% endif %}">
+        <span class="icon">
+          <i class="fas fa-arrow-left"></i>
+        </span>
+    </span>
+      {% endif %}
+    <div class="block mx-6 mt-2 mb-5">
+    {{ choice.details|linebreaks }}
+    </div>
   </div>
   {% endfor %}
 
