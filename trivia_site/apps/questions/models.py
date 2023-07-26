@@ -41,7 +41,7 @@ class Choice(models.Model):
         on_delete=models.CASCADE,  # If you delete a question, delete its choices
         related_name="choices"     # Get choices via q.choices (default is q.choice_set)
     )
-    text = models.CharField('choice', max_length=100)
+    text = models.TextField('choice')
     is_correct = models.BooleanField(default=False)
     details = models.TextField(blank=True)
 
