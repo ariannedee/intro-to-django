@@ -11,10 +11,10 @@ This is the code for the *O'Reilly Video* - **Intro to Django** presented by Ari
 1. [Install Django](#6-install-django)
 
 ## Set up instructions
-Please complete these steps prior to the course.
-Email 
+Feel free to email me at
 [arianne.dee.studios@gmail.com](mailto:arianne.dee.studios@gmail.com)
-if you have any questions.
+if you are having any problems getting set up for the course.
+
 ### 1. Install Python 3.11
 
 This course uses Python 3.11, but Python 3.8 and higher should work.
