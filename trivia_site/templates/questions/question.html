@@ -17,8 +17,8 @@
   </div>
   {% for choice in question.choices.all %}
   <div class="buttons is-centered">
-    <a class="button is-rounded is-dark is-outlined" href="{% url 'questions:answer' question.pk choice.pk %}">
-      {{ choice.text }}
+    <a class="question button is-rounded is-dark is-outlined" href="{% url 'questions:answer' question.pk choice.pk %}">
+      {{ choice.text|linebreaks }}
     </a>
   </div>
   {% empty %}

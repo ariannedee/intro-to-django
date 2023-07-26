@@ -7,7 +7,7 @@
   <h3 class="title">{{ question.text }}</h3>
   {% for choice in question.choices.all %}
   <div class="block is-centered">
-    <a class="button is-rounded is-unclickable {% if choice.is_correct %}is-success{% elif choice == selected_choice %}is-danger{% else %}is-dark is-outlined{% endif %}">
+    <a class="question button is-rounded is-unclickable {% if choice.is_correct %}is-success{% elif choice == selected_choice %}is-danger{% else %}is-dark is-outlined{% endif %}">
       {% if choice.is_correct %}
       <span class="icon mr-2">
         <i class="fas fa-check"></i>
@@ -17,7 +17,7 @@
         <i class="fas fa-times"></i>
       </span>
       {% endif %}
-      {{ choice.text }}
+      {{ choice.text|linebreaks }}
   </span>
     </a>
     {% if choice == selected_choice %}

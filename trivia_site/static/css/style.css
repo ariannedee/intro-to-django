@@ -10,3 +10,7 @@ section.main {
 .absolute {
   position: absolute;
 }
+
+.question {
+  height: unset;
+}
