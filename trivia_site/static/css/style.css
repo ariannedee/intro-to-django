@@ -6,3 +6,7 @@ section.main {
   cursor: auto !important;
   pointer-events: none;
 }
+
+.absolute {
+  position: absolute;
+}

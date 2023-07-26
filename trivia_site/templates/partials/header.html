@@ -1,8 +1,9 @@
 {% load static %}
-<nav class="navbar p-3 is-dark" role="navigation" aria-label="main navigation">
+<nav class="navbar p-5 is-dark" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item is-size-4 has-text-weight-semibold" href="{% url 'index' %}">
-      Django Trivia
+      <img class="pr-3" src="{% static 'images/icon.png' %}">
+      django trivia
     </a>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
