@@ -160,6 +160,14 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 FIXTURE_DIRS = [BASE_DIR / 'fixtures']
 
+# Email for user registration and password reset
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = env("EMAIL_ADDRESS", "")
+EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD", "")
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
