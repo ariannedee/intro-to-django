@@ -3,10 +3,13 @@
 {% block bodyclass %}has-background-light{% endblock %}
 
 {% block content %}
-<div class="box p-6 has-text-centered">
+<div class="box p-6 has-text-centered is-align-items-center is-flex-direction-column is-flex">
   <h3 class="title">{{ question.text }}</h3>
+  {% if question.details %}
+    <pre class="details block has-text-left">{{ question.details }}</pre>
+  {% endif %}
   {% for choice in question.choices.all %}
-  <div class="block is-centered">
+  <div>
     <a class="question button is-rounded is-unclickable {% if choice.is_correct %}is-success{% elif choice == selected_choice %}is-danger{% else %}is-dark is-outlined{% endif %}">
       {% if choice.is_correct %}
       <span class="icon mr-2">
@@ -33,7 +36,7 @@
   </div>
   {% endfor %}
 
-  <span>
+  <div class="bottom-row">
     <!-- Hack to fix spacing. Makes Correct/Incorrect label centred -->
     <a class="button is-pulled-left is-invisible" href="{% url 'questions:question' %}">Next</a>
 
@@ -44,6 +47,6 @@
     {% endif %}
 
     <a class="button is-link is-pulled-right" href="{% url 'questions:question' %}">Next</a>
-  </span>
+  </div>
 </div>
 {% endblock %}

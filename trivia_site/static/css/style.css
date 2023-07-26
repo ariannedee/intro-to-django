@@ -14,3 +14,11 @@ section.main {
 .question {
   height: unset;
 }
+
+.details {
+  width: fit-content;
+}
+
+.bottom-row {
+  width: 100%;
+}
