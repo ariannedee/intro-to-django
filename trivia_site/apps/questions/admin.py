@@ -20,10 +20,11 @@ class QuestionAdmin(admin.ModelAdmin):
     def choice_list(self, obj):                   # Custom field for list_display
         choices = []
         for choice in obj.choices.all():
+            text = choice.text.replace('{', '{{').replace('}', '}}')
             if choice.is_correct:
-                choices.append(f"<strong>{choice.text}</strong>")
+                choices.append(f"<strong>{text}</strong>")
             else:
-                choices.append(choice.text)
+                choices.append(text)
         return format_html('<br>'.join(choices))  # Allow HTML
 
     choice_list.short_description = "Choices"     # Set header name for custom field
