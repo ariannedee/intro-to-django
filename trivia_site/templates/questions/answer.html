@@ -4,7 +4,14 @@
 
 {% block content %}
 <div class="box p-6 has-text-centered is-align-items-center is-flex-direction-column is-flex">
-  <h3 class="title">{{ question.text }}</h3>
+  <h3 class="title">
+    {{ question.text|safe }}
+    {% if user.is_staff %}
+    <a class="icon has-text-info is-size-6" href="{% url 'questions:update' question.pk %}">
+        <i class="fas fa-pencil-alt"></i>
+    </a>
+    {% endif %}
+  </h3>
   {% if question.details %}
     <pre class="details block has-text-left">{{ question.details }}</pre>
   {% endif %}
