@@ -4,32 +4,9 @@
     "pk": 1,
     "fields": {
       "text": "What does ORM stand for?",
-      "created_at": "2021-07-27T7:41:00+07:00"
-    }
-  },
-  {
-    "model": "questions.choice",
-    "pk": 1,
-    "fields": {
-      "question": "1",
-      "text": "Objective Rational Mapper"
-    }
-  },
-  {
-    "model": "questions.choice",
-    "pk": 2,
-    "fields": {
-      "question": 1,
-      "text": "Object Relationship Model"
-    }
-  },
-  {
-    "model": "questions.choice",
-    "pk": 3,
-    "fields": {
-      "question": 1,
-      "text": "Object Relational Mapping",
-      "is_correct": true
+      "details": "",
+      "difficulty": "",
+      "created_at": "2021-07-27T00:41:00Z"
     }
   },
   {
@@ -37,7 +14,119 @@
     "pk": 2,
     "fields": {
       "text": "What happens when a url.py file is edited while the development server is still running?",
-      "created_at": "2021-07-27T7:42:00+06:00"
+      "details": "",
+      "difficulty": "E",
+      "created_at": "2021-07-27T01:42:00Z"
+    }
+  },
+  {
+    "model": "questions.question",
+    "pk": 3,
+    "fields": {
+      "text": "What kind of architecture does Django use?",
+      "details": "",
+      "difficulty": "E",
+      "created_at": "2023-07-26T20:26:48.878Z"
+    }
+  },
+  {
+    "model": "questions.question",
+    "pk": 4,
+    "fields": {
+      "text": "How should you access the User model?",
+      "details": "",
+      "difficulty": "H",
+      "created_at": "2023-07-26T20:39:12.634Z"
+    }
+  },
+  {
+    "model": "questions.question",
+    "pk": 5,
+    "fields": {
+      "text": "What is the correct way to start a django project so that manage.py is in your current directory",
+      "details": "",
+      "difficulty": "M",
+      "created_at": "2023-07-26T22:48:45.883Z"
+    }
+  },
+  {
+    "model": "questions.question",
+    "pk": 6,
+    "fields": {
+      "text": "When you create an app with the startapp command, which file is not automatically created?",
+      "details": "",
+      "difficulty": "E",
+      "created_at": "2023-07-26T22:56:07.460Z"
+    }
+  },
+  {
+    "model": "questions.question",
+    "pk": 7,
+    "fields": {
+      "text": "Given the following Django model: Choose the correct way to filter active users:",
+      "details": "class User(models.Model):\r\n    email = models.EmailField()\r\n    first_name = models.CharField(max_length=255)\r\n    last_name = models.CharField(max_length= 255)\r\n    is_active = models.BooleanField(default=True)",
+      "difficulty": "E",
+      "created_at": "2023-07-26T22:58:13.969Z"
+    }
+  },
+  {
+    "model": "questions.question",
+    "pk": 8,
+    "fields": {
+      "text": "What is the purpose of __init__.py in project directories?",
+      "details": "",
+      "difficulty": "",
+      "created_at": "2023-07-27T00:02:42.065Z"
+    }
+  },
+  {
+    "model": "questions.question",
+    "pk": 9,
+    "fields": {
+      "text": "When you have made changes in a model, which command has to be executed first in order for the changes to be applied to the database?",
+      "details": "",
+      "difficulty": "M",
+      "created_at": "2023-07-27T00:05:23.250Z"
+    }
+  },
+  {
+    "model": "questions.question",
+    "pk": 10,
+    "fields": {
+      "text": "To use a Django variable named first_name in a Django template, use this syntax:",
+      "details": "",
+      "difficulty": "",
+      "created_at": "2023-07-27T00:09:36.939Z"
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 1,
+    "fields": {
+      "question": 1,
+      "text": "Object-Role Modeling",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 2,
+    "fields": {
+      "question": 1,
+      "text": "Object-Relationship Model",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 3,
+    "fields": {
+      "question": 1,
+      "text": "Object-Relational Mapping",
+      "is_correct": true,
+      "details": "This is a technique for converting data between a relational database and objects in an object-oriented programming language.\r\n\r\nThere are many libraries that allow you to create an Object-Relational Mapping, with Django ORM being used by the Django Web Framework."
     }
   },
   {
@@ -45,7 +134,9 @@
     "pk": 4,
     "fields": {
       "question": 2,
-      "text": "The web page is automatically reloaded"
+      "text": "The web page is automatically reloaded",
+      "is_correct": false,
+      "details": ""
     }
   },
   {
@@ -54,7 +145,8 @@
     "fields": {
       "question": 2,
       "text": "The development server automatically restarts",
-      "is_correct": true
+      "is_correct": true,
+      "details": ""
     }
   },
   {
@@ -62,7 +154,339 @@
     "pk": 6,
     "fields": {
       "question": 2,
-      "text": "The development server does nothing"
+      "text": "The development server does nothing",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 7,
+    "fields": {
+      "question": 3,
+      "text": "Model - View - Controller",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 8,
+    "fields": {
+      "question": 3,
+      "text": "Model - Controller - Template",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 9,
+    "fields": {
+      "question": 3,
+      "text": "Controller - View - Template",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 10,
+    "fields": {
+      "question": 3,
+      "text": "Model - View - Template",
+      "is_correct": true,
+      "details": "While MVC (Model View Controller) is a common design pattern, Django uses a MVT (Model View Template) pattern.\r\n\r\nThe Model is an interface for the data stored in the database (the same as the M in MVC).\r\nThe View is a bridge that connects Models to Templates (a bit of the C in MVC).\r\nThe Template is the user interface that the user sees (the same as the V in MVC).\r\n\r\nThe rest of the MVC Controller functionality is done by the Django framework."
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 11,
+    "fields": {
+      "question": 4,
+      "text": "from django.contrib.auth.models import User",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 12,
+    "fields": {
+      "question": 4,
+      "text": "from django.contrib.auth import get_user_model\r\nUser = get_user_model()",
+      "is_correct": true,
+      "details": "This is preferred if you're in a non-models.py file."
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 13,
+    "fields": {
+      "question": 4,
+      "text": "from django.conf import settings\r\nsettings.AUTH_USER_MODEL",
+      "is_correct": true,
+      "details": "This is preferred if you are in a models.py file. Due to the order of Django's initialization process, get_user_model() should not be called until after the models have been registered.\r\n\r\nSee https://learndjango.com/tutorials/django-best-practices-referencing-user-model."
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 14,
+    "fields": {
+      "question": 4,
+      "text": "from django.contrib.auth.backends import UserModel",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 15,
+    "fields": {
+      "question": 1,
+      "text": "Object-Response Map",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 16,
+    "fields": {
+      "question": 5,
+      "text": "django-admin startproject my_project .",
+      "is_correct": true,
+      "details": "Since a manage.py file doesn't exist yet, you must use django-admin to access Django's management commands.\r\n\r\nThe . (after the project name) indicates that you want to create the project in the current directory. Without it, manage.py will be in a directory called my_project/, not the current directory."
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 17,
+    "fields": {
+      "question": 5,
+      "text": "django-admin startproject my_project",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 18,
+    "fields": {
+      "question": 5,
+      "text": "python manage.py startproject my_project",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 19,
+    "fields": {
+      "question": 5,
+      "text": "django startproject my_project .",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 20,
+    "fields": {
+      "question": 6,
+      "text": "admin.py",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 21,
+    "fields": {
+      "question": 6,
+      "text": "apps.py",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 22,
+    "fields": {
+      "question": 6,
+      "text": "tests.py",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 23,
+    "fields": {
+      "question": 6,
+      "text": "urls.py",
+      "is_correct": true,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 24,
+    "fields": {
+      "question": 7,
+      "text": "User.qs.filter(is_active=True)",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 25,
+    "fields": {
+      "question": 7,
+      "text": "User.objects.filter(is_active=True)",
+      "is_correct": true,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 26,
+    "fields": {
+      "question": 7,
+      "text": "User.objects().filter(is_active=True)",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 27,
+    "fields": {
+      "question": 7,
+      "text": "User.all().filter(is_active=True)",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 28,
+    "fields": {
+      "question": 8,
+      "text": "It allows Python to recognize the folder as package",
+      "is_correct": true,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 29,
+    "fields": {
+      "question": 8,
+      "text": "It is useless and can be deleted.",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 30,
+    "fields": {
+      "question": 8,
+      "text": "It is used to initialize any empty values.",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 31,
+    "fields": {
+      "question": 8,
+      "text": "It is needed to import modules into the package scope",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 32,
+    "fields": {
+      "question": 9,
+      "text": "python manage.py migrate",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 33,
+    "fields": {
+      "question": 9,
+      "text": "python manage.py makemigrations",
+      "is_correct": true,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 34,
+    "fields": {
+      "question": 9,
+      "text": "python manage.py sqlmigrate",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 35,
+    "fields": {
+      "question": 9,
+      "text": "python manage.py runmigrations",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 36,
+    "fields": {
+      "question": 10,
+      "text": "{% first_name %}",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 37,
+    "fields": {
+      "question": 10,
+      "text": "{- first_name -}",
+      "is_correct": false,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 38,
+    "fields": {
+      "question": 10,
+      "text": "{{ first_name }}",
+      "is_correct": true,
+      "details": ""
+    }
+  },
+  {
+    "model": "questions.choice",
+    "pk": 39,
+    "fields": {
+      "question": 10,
+      "text": "<var>first_name</var>",
+      "is_correct": false,
+      "details": ""
     }
   }
 ]
