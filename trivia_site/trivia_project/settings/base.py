@@ -16,7 +16,7 @@ import environs
 env = environs.Env()              # Get os environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 env.read_env(BASE_DIR / ".env")  # Read .env file
 
 # Quick-start development settings - unsuitable for production
@@ -27,7 +27,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['trivia-ariannedee.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -89,15 +89,7 @@ WSGI_APPLICATION = 'trivia_project.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "ariannedee$trivia",
-        "USER": "ariannedee",
-        "PASSWORD": env("DB_PASSWORD", None),
-        "HOST": "ariannedee.mysql.pythonanywhere-services.com",
-        "ATOMIC_REQUESTS": True,
-        "CONN_MAX_AGE": env.int("CONN_MAX_AGE", default=60),
-    }
+    # Configured in environment settings file
 }
 
 # CACHES
@@ -159,14 +151,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 FIXTURE_DIRS = [BASE_DIR / 'fixtures']
-
-# Email for user registration and password reset
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = env("EMAIL_ADDRESS", "")
-EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD", "")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
