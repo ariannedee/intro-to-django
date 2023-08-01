@@ -1,8 +1,5 @@
 from .base import *
 
-print()
-print("------ in settings/production.py ---------")
-print(f"{ROOT_URLCONF=}")
 
 ALLOWED_HOSTS = ['trivia-ariannedee.pythonanywhere.com']
 
