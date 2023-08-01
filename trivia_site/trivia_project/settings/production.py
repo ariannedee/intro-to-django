@@ -11,7 +11,7 @@ DATABASES = {
         "HOST": "ariannedee.mysql.pythonanywhere-services.com",
         "ATOMIC_REQUESTS": True,
         "CONN_MAX_AGE": env.int("CONN_MAX_AGE", default=60),
-        "STRICT_ALL_TABLES": True,
+        "init_command": "SET sql_mode='STRICT_ALL_TABLES'",
     }
 }
 
