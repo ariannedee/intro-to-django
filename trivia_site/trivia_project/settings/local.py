@@ -1,5 +1,9 @@
 from .base import *
 
+print()
+print("------ in settings/production.py ---------")
+print(f"{ROOT_URLCONF=}")
+
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
