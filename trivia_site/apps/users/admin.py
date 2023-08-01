@@ -1,6 +1,6 @@
 """
 Advanced Django Admin
-https://docs.djangoproject.com/en/3.2/ref/contrib/admin/
+https://docs.djangoproject.com/en/4.2/ref/contrib/admin/
 """
 from django.contrib import admin
 from django.contrib.auth import admin as auth_admin, get_user_model
@@ -21,7 +21,7 @@ class UserAdmin(auth_admin.UserAdmin):
     add_form = UserCreationForm
 
     # Fieldsets - sections/fields to show in forms (only the change form in this case)
-    # https://docs.djangoproject.com/en/3.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets
+    # https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets
     fieldsets = (("User", {"fields": ("name",)}),) + tuple(auth_admin.UserAdmin.fieldsets)
 
     # List display - fields to show in the list display
