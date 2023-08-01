@@ -1,0 +1,2 @@
+environs==9.5.0         # https://github.com/sloria/environs
+django-bulma>=0.8,<0.9  # https://github.com/timonweb/django-bulma
