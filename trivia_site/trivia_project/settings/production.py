@@ -21,3 +21,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = env("EMAIL_ADDRESS", "")
 EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD", "")
+
+# MySQL Strict mode: https://docs.djangoproject.com/en/4.1/ref/databases/#mysql-sql-mode
+STRICT_ALL_TABLES = True
