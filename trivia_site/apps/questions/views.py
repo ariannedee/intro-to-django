@@ -1,11 +1,10 @@
 from django.contrib import messages
-from django.forms import inlineformset_factory
 from django.http import Http404, HttpResponse
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect, render
 from django.template import loader
 
-from .forms import QuestionForm
-from .models import Question, Choice
+from .forms import ChoiceFormSet, QuestionForm
+from .models import Choice, Question
 
 
 def question_view(request, pk):
@@ -56,11 +55,6 @@ def complete(request):
 def question_update(request, pk):
     q = get_object_or_404(Question, pk=pk)
 
-    # Create a "formset" to update the choices related to a question
-    # https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/#inline-formsets
-    ChoiceFormSet = inlineformset_factory(
-        Question, Choice, fields=('text', 'is_correct'), can_delete=False, extra=0, min_num=3
-    )
     if request.method == 'POST':
         formset = ChoiceFormSet(request.POST, instance=q)
         form = QuestionForm(request.POST, instance=q)
