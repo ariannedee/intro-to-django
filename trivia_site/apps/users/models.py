@@ -36,4 +36,4 @@ class User(AbstractUser):
     def avatar_url(self):
         if self.avatar:
             return self.avatar.url
-        return settings.MEDIA_URL + 'avatars/default.png'
+        return settings.STATIC_URL + 'images/avatar.png'
