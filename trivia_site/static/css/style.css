@@ -22,3 +22,7 @@ section.main {
 .bottom-row {
   width: 100%;
 }
+
+.navbar-item img {
+max-height: unset
+}

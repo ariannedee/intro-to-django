@@ -22,7 +22,7 @@ class UserAdmin(auth_admin.UserAdmin):
 
     # Fieldsets - sections/fields to show in forms (only the change form in this case)
     # https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets
-    fieldsets = (("User", {"fields": ("name",)}),) + tuple(auth_admin.UserAdmin.fieldsets)
+    fieldsets = (("User", {"fields": ("name", "avatar")}),) + tuple(auth_admin.UserAdmin.fieldsets)
 
     # List display - fields to show in the list display
     list_display = ("username", "email", "name", "is_superuser", "is_staff", "is_active")

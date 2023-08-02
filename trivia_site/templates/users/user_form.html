@@ -9,9 +9,10 @@
 <div class="box p-6">
 <h2>Test profile</h2>
   <p class="subtitle">{{ user.username }}</p>
-<form class="form-horizontal" method="post" action="{% url 'users:update' %}">
+<form class="form-horizontal" method="post" action="{% url 'users:update' %}" enctype="multipart/form-data">
   {% csrf_token %}
   {{ form|bulma_horizontal }}
+  {% include "users/partials/image_upload.html" %}
   <div class="field">
     <a class="button" href="{% url 'users:my-profile' %}">Cancel</a>
     <button type="submit" class="button is-primary">Update</button>
@@ -19,4 +20,33 @@
   <input type="hidden" name="next" value="{{ next }}"/>
 </form>
 </div>
+{% endblock %}
+
+{% block page_js %}
+<script>
+$(document).ready(function(){
+
+  // Replace the default image picker from form with the custom one in users/partials/image_upload.html
+
+  const replacement_html = $("#better-image-field");
+  const to_replace = $("label.file-label")[0];
+
+  $(to_replace).before(replacement_html);
+  $(to_replace).remove();
+
+  // Update filename after choosing a file
+  // See: https://bulma.io/documentation/form/file/#javascript
+
+  const fileInput = $('#better-image-field input[type=file]')[0];
+
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileNameField = $('#better-image-field .file-name')[0];
+      fileNameField.textContent = fileInput.files[0].name;
+    }
+  }
+});
+</script>
+
+});
 {% endblock %}

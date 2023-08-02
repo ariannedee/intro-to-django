@@ -1,0 +1,35 @@
+<div id="better-image-field">
+  <div class="block is-flex mb-2">
+    <div>
+    <label class="file-label">Currently:</label>
+    <a href="{{user.get_avatar_url}}">
+      <figure class="image is-64x64 ml-2 is-rounded">
+        <img class="is-rounded" src="{{ user.avatar_url }}">
+      </figure>
+    </a>
+    <div class="block mt-3 mb-3">
+      <input type="checkbox" name="avatar-clear" id="avatar-clear_id">
+      <label for="avatar-clear_id">Clear</label><br>
+    </div>
+    </div>
+    <div class="ml-5">
+    Change:
+    <div class="file">
+      <label class="file-label">
+        <input class="file-input" type="file" name="avatar" id="id_avatar" accept="image/*">
+        <span class="file-cta">
+      <span class="file-icon">
+        <i class="fas fa-upload"></i>
+      </span>
+        <span class="file-label">
+        Choose a file…
+      </span>
+    </span>
+        <span class="file-name">
+      No file uploaded
+    </span>
+      </label>
+    </div>
+    </div>
+  </div>
+</div>

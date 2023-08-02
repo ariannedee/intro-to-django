@@ -8,15 +8,20 @@
 <div class="box p-6">
   <h2>User profile</h2>
 
-  <div class="block ml-3">
-    {% include "users/partials/user_field.html" with label="Username" value=object.username %}
-    {% include "users/partials/user_field.html" with label="Name" value=object.name %}
-    {% include "users/partials/user_field.html" with label="Email" value=object.email %}
+  <div class="is-flex">
+    <figure class="image is-128x128 ml-2 mt-5 is-rounded">
+      <img class="is-rounded" src="{{ user.avatar_url }}">
+    </figure>
+    <div class="block ml-3">
+      {% include "users/partials/user_field.html" with label="Username" value=object.username %}
+      {% include "users/partials/user_field.html" with label="Name" value=object.name %}
+      {% include "users/partials/user_field.html" with label="Email" value=object.email %}
+    </div>
   </div>
 
   {% if object == user %}
   <div class="control">
-      <a class="button is-primary" href="{% url 'users:update' %}" role="button">Edit</a>
+    <a class="button is-primary" href="{% url 'users:update' %}" role="button">Edit</a>
   </div>
   {% endif %}
 

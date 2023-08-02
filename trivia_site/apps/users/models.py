@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.db.models import CharField
@@ -12,6 +13,7 @@ class User(AbstractUser):
     """
     name = CharField(max_length=255)
     email = models.EmailField('Email address', unique=True)
+    avatar = models.ImageField(upload_to='avatars', blank=True, null=True)
 
     USERNAME_FIELD = 'email'                # Log in with email (instead of username)
     REQUIRED_FIELDS = ['name', 'username']  # Require these when creating a superuser
@@ -29,3 +31,9 @@ class User(AbstractUser):
             str: URL for user detail.
         """
         return reverse("users:detail", kwargs={"username": self.username})
+
+    @property
+    def avatar_url(self):
+        if self.avatar:
+            return self.avatar.url
+        return settings.MEDIA_URL + 'avatars/default.png'
