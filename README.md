@@ -130,13 +130,14 @@ Here are some links to configure your Django project in the following IDEs
 ## Django Trivia local setup instructions
 
 1. Navigate into the `trivia_site` folder
-2. Create a virtual environment with Python 3.8+
-3. Activate your virtual environment
-4. `$ pip install -r requirements/local.txt` to install local requirements
-5. `$ python manage.py migrate` to migrate your database
-6. `$ python manage.py createsuperuser` and follow instructions
-7. `$ python manage.py loaddata questions` to add seed data
-8. `$ python manage.py runserver` to run the development server
+1. Create a virtual environment with Python 3.8+
+1. Activate your virtual environment
+1. `$ pip install --upgrade pip` to upgrade pip
+1. `$ pip install -r requirements/local.txt` to install local requirements
+1. `$ python manage.py migrate` to migrate your database
+1. `$ python manage.py createsuperuser` and follow instructions
+1. `$ python manage.py loaddata questions` to add seed data
+1. `$ python manage.py runserver` to run the development server
 
 ---
 
