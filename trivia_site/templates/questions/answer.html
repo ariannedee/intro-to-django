@@ -42,17 +42,12 @@
     </div>
   </div>
   {% endfor %}
-
-  <div class="bottom-row">
-    <!-- Hack to fix spacing. Makes Correct/Incorrect label centred -->
-    <a class="button is-pulled-left is-invisible" href="{% url 'questions:question' %}">Next</a>
-
     {% if selected_choice.is_correct %}
-      <span class="has-text-success is-size-4 is-bold">Correct!</span>
+      <div class="block has-text-success is-size-4 is-bold">Correct!</div>
     {% else %}
-      <span class="has-text-danger is-size-4 is-bold">Incorrect</span>
+      <div class="block has-text-danger is-size-4 is-bold">Incorrect</div>
     {% endif %}
-
+  <div class="bottom-row is-flex is-justify-content-flex-end">
     <a class="button is-link is-pulled-right" href="{% url 'questions:question' %}">Next</a>
   </div>
 </div>
