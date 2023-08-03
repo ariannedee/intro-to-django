@@ -25,5 +25,9 @@ urlpatterns = [
     path('questions/', include('apps.questions.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
-    path("__debug__/", include("debug_toolbar.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # https://docs.djangoproject.com/en/4.2/howto/static-files/#serving-uploaded-files-in-development
+
+if 'debug_toolbar' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        path("__debug__/", include("debug_toolbar.urls")),
+    ]
