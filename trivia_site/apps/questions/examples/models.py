@@ -18,7 +18,7 @@ TRIVIA_SITE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 sys.path.append(str(TRIVIA_SITE_DIR))
 
 # Let Django know where to find your settings
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'trivia_project.local_settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'trivia_project.settings.local')
 
 # Configure Django so your models can be used
 import django
