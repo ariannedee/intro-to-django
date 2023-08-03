@@ -16,6 +16,8 @@ class QuestionAdmin(admin.ModelAdmin):
 
     list_display = ('pk', 'text', 'choice_list', 'difficulty')
     list_display_links = ('text',)
+    list_filter = ('difficulty',)
+    search_fields = ('text', )
 
     def choice_list(self, obj):                   # Custom field for list_display
         choices = []
