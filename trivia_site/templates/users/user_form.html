@@ -28,10 +28,7 @@ $(document).ready(function(){
 
   // Replace the default image picker from form with the custom one in users/partials/image_upload.html
 
-  const replacement_html = $("#better-image-field");
   const to_replace = $("label.file-label")[0];
-
-  $(to_replace).before(replacement_html);
   $(to_replace).remove();
 
   // Update filename after choosing a file
