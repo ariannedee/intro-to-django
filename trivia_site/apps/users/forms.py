@@ -7,6 +7,8 @@ User = get_user_model()
 
 
 class UserChangeForm(auth_forms.UserChangeForm):
+    password = None
+
     class Meta(auth_forms.UserChangeForm.Meta):
         model = User
         fields = ("name", "email", "avatar")

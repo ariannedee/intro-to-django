@@ -17,7 +17,6 @@ class UserAdmin(auth_admin.UserAdmin):
     Uses name field instead of first_name and last name
     Makes email more visible and required during creation
     """
-    form = UserChangeForm
     add_form = UserCreationForm
 
     # Fieldsets - sections/fields to show in forms (only the change form in this case)
