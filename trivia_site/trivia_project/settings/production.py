@@ -18,6 +18,11 @@ DATABASES = {
     }
 }
 
+# Allow static files to be served by Django
+MIDDLEWARE += [
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+]
+
 # Email for user registration and password reset
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
