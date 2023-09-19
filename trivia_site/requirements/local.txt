@@ -1,4 +1,3 @@
 -r base.txt
 
-django>=4.2,<5.0             # https://github.com/django/django
 django-debug-toolbar==4.1.0  # https://django-debug-toolbar.readthedocs.io/en/latest/

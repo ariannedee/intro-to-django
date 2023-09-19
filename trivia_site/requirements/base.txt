@@ -1,3 +1,4 @@
+django>=4.2,<5.0             # https://github.com/django/django
 environs==9.5.0         # https://github.com/sloria/environs
 django-bulma>=0.8,<0.9  # https://github.com/timonweb/django-bulma
 Pillow>=10.0.0,<11.0    # https://pillow.readthedocs.io/en/latest/
