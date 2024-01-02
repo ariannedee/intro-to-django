@@ -1,7 +1,13 @@
 from .base import *
 
 
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
+SECRET_KEY = 'django-insecure-xk@mwgnc4bjx&xvass@y3*cu@v2uw+++uzh*@knxnp8j^8#jyh'
+
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 ALLOWED_HOSTS = ['*']
 
 DATABASES = {
