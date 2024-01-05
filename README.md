@@ -127,7 +127,9 @@ Here are some links to configure your Django project in the following IDEs
 
 ---
 
-## Django Trivia local setup instructions
+## Django Trivia example project
+
+### Local setup instructions
 
 1. Navigate into the `trivia_site` folder
 1. Create a virtual environment with Python 3.8+
@@ -139,8 +141,48 @@ Here are some links to configure your Django project in the following IDEs
 1. `$ python manage.py loaddata questions` to add seed data
 1. `$ python manage.py runserver` to run the development server
 
----
+### Production setup instructions
 
+Live website at https://trivia-ariannedee.pythonanywhere.com/.
+
+Hosted on Python Anywhere using Python 3.10 and MySQL 5.7.
+
+To get a copy in production on your own server:
+
+1. Set up a server environment with Python 3.8 or higher and a database (Postgres or MySQL preferred)
+2. Fork this project or create a copy of the `trivia_site` folder in your own repository and clone into your sever
+**Note**: The next few steps may differ depending on what kind of server/serivce you are using. Follow a Django setup tutorial if you can find one.
+3. Create and activate a virtual environment if desired
+4. Set the `DJANGO_SETTINGS_MODULE` environment variable to `trivia_project.settings.production`
+   - `$ export DJANGO_SETTINGS_MODULE=trivia_project.settings.local` on Linux
+   - On PythonAnywhere, edit the WSGI configuration file with `os.environ['DJANGO_SETTINGS_MODULE'] = 'trivia_project.settings.production'`
+   - This makes sure running `manage.py` uses the right settings file
+5. Configure the server to use WSGI (instead of `python manage.py runserver`)
+   - Point to `trivia_project.wsgi.application` or configure a `wsgi.py` file on the server (follow tutorial instructions)
+6. Set up your secrets in a `.env` file
+   - Duplicate `.env.example` and save it as `.env`
+   - Fill in the `DJANGO_SECRET_KEY` field with a random string of 50+ characters
+   - Fill in the `DB_PASSWORD` field
+   - Email fields are only used for the forgot password feature. If you want to get it working, the easiest is to create a new Gmail address and create an app password for it and use that for `EMAIL_PASSWORD`
+7. Edit `trivia_site/trivia_project/settings/production.py`
+   - Update `ALLOWED_HOSTS` to use your server address(es)
+   - Edit your database settings (except password)
+8. Edit `trivia_site/requirements/production.txt` to use the correct package for your database
+   - Use a different `mysqlclient` if necessary, or `psycopg` or `psycopg2` if using Postgres (or other package if using a different DB)
+   - This might be trial and error. You can pip install it, try to get it working, then update the requirements file with the pinned version
+9. Install the requirements `$ pip install -r requirements/production.txt`
+10. Run/reload the server and see if it works, troubleshoot if necessary
+   - You may need to do more configuration to properly serve your static and media files. Look for a tutorial for your cloud provider or server type.
+   - If you cannot serve media files from the same server, use Amazon S3
+11. Migrate the database by running `python manage.py migrate`
+12. If that works, commit any code changes you made.
+13. `$ python manage.py createsuperuser` and follow instructions
+14. `$ python manage.py loaddata questions` to add seed data
+15. `$ python manage.py collectstatic` to collect the static files into `staticfiles/` (run this every time your static files change)
+
+Please let me know if you have any suggestions/updates/questions about these instructions.
+
+---
 
 ## Questions or comments?
 
