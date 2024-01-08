@@ -153,7 +153,7 @@ To get a copy in production on your own server:
 
 1. Set up a server environment with Python 3.8 or higher and a database (Postgres or MySQL preferred)
 2. Fork this project or create a copy of the `trivia_site` folder in your own repository and clone into your sever
-**Note**: The next few steps may differ depending on what kind of server/serivce you are using. Follow a Django setup tutorial if you can find one.
+**Note**: The next few steps may differ depending on what kind of server/service you are using. Follow a Django setup tutorial if you can find one.
 3. Create and activate a virtual environment if desired
 4. Set the `DJANGO_SETTINGS_MODULE` environment variable to `trivia_project.settings.production`
    - `$ export DJANGO_SETTINGS_MODULE=trivia_project.settings.local` on Linux

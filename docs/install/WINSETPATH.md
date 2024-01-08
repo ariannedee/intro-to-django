@@ -1,7 +1,7 @@
 ## Windows set up instruction
 If you installed Python with the default options,
 you will probably need to add Python to the PATH variable.
-This let's your operating system know where to look for the Python executable
+This lets your operating system know where to look for the Python executable
 when you try running it.
 
 To add Python to your PATH variable:
