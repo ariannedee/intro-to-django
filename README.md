@@ -1,5 +1,7 @@
 # Intro to Django
-This is the code for the *O'Reilly Video* - **Intro to Django** presented by Arianne Dee
+This is the code for the *O'Reilly Video* - **Intro to Django** presented by Arianne Dee.
+
+You can download a PDF of the slides [here](https://drive.google.com/file/d/1F-FDjBJnjrhnB7ulM3DJuro_T-5M07r-/view?usp=sharing).
 
 ## Course setup
 
